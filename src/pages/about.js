@@ -1,11 +1,11 @@
 import React from 'react'
 import Layout from '../components/layout'
-import { Container, Badge } from 'react-bootstrap'
+import { Jumbotron, Container, Badge } from 'react-bootstrap'
 
 
 const AboutPage = () => {
     return(
-        <Layout>
+        <Layout title={'About'} image={'??'}>
             <Container>
                 <h1>About</h1>
                 <p>We&rsquo;re a Northeastern U.S. couple, but it only took one trip to Iceland for us to realize traveling abroad together added a whole new dimension to both our lives and our relationship. And we always knew we liked food and drinks. One of us is an actress. The other is a nerd for videography. Mix it all together and you have the perfect recipe for a spastic travel vlog series. Us scavenging the world for the best local food we can find, and recording it all so we don&rsquo;t forget.  From our humble beginnings with an Instagram account and a dream, we managed to cobble together a couple videos from our first life-changing trip to Japan in 2017. Unfortunately, we filmed the whole thing on a GoPro which we only realized was oriented sideways after we got back and started editing.</p>

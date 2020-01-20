@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap'
 
 const BlogPage = () => {
     return(
-        <Layout>
+        <Layout title={'Blog'}>
             <Container>
                 <h1>Blog</h1>
                 <p>Posts gon' go here.</p>

@@ -46,6 +46,7 @@ const Footer = () => {
                 <Row>
                     <Col>
                         <h3>Taste for Traveling</h3>
+                        <p>A taste for travel, bit by the travel bug, wanderlust&mdash;whatever you want to call it, we&rsquo;ve got it. Plus we need food to live.</p>
                         <p>&copy;2020 Created by Douglas Odell</p>
                     </Col>
                     <Col>

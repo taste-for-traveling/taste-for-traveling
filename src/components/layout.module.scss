@@ -1,10 +1,34 @@
+@import '../styles/theme.scss';
+
 .container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: 4rem;
 }
 
 .content {
-    flex-grow: 1
+    flex-grow: 1;
+}
+
+.pageHeader {
+    height: 30vh;
+    min-height: 200px;
+}
+
+$fontsize: 8vmin;
+
+.h1 {
+    color: $white;
+    text-shadow: $shadow-tight;
+    font-size: 3.5rem;
+    margin-top: 2rem;
+    margin-bottom: 3vh;
+    line-height: 10vh;
+}
+
+@media (min-height: 550px) {
+    .h1 {
+        font-size: $fontsize;
+        line-height: $fontsize;
+    }
 }

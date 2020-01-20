@@ -18,13 +18,17 @@ $headings-color: $red;
 $headings-font-weight: 700;
 // $h1-font-size: $font-size-base * 3;
 // $h2-font-size: $font-size-base * 2.5 !default;
-// $h3-font-size: $font-size-base * 1.75 !default;
+$h3-font-size: $font-size-base * 1.5;
 // $h4-font-size: $font-size-base * 1.5 !default;
 // $h5-font-size: $font-size-base * 1.25 !default;
 // $h6-font-size: $font-size-base * 1 !default;
+$display1-weight:  700;
 
 //Links
 $link-color: $blue;
+
+//Jumbotron
+$jumbotron-padding: 0;
 
 //Badge
 $badge-font-size: 100%;

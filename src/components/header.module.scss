@@ -7,6 +7,15 @@
     font-weight: 700;
 }
 
+.link:hover {
+    color: $white;
+    text-decoration: none;
+}
+
+.activeLink {
+    text-shadow: $shadow-red;
+}
+
 .icon {
     filter: drop-shadow($shadow);
 }
