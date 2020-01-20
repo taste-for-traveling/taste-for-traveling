@@ -65,7 +65,7 @@ const Header = () => {
                                     )
                                 } else if (navItem.type === 'external') {
                                     return(
-                                        <Nav.Item key={i} as="nav-link"><a href={navItem.url} target="_blank" className={headerStyles.link}>{navItem.title} <FontAwesomeIcon icon={faChevronRight} className={headerStyles.icon} /></a></Nav.Item>
+                                        <Nav.Item key={i} as="nav-link"><a href={navItem.url} target="_blank" rel="noopener noreferrer" className={headerStyles.link}>{navItem.title} <FontAwesomeIcon icon={faChevronRight} className={headerStyles.icon} /></a></Nav.Item>
                                     )
                                 }
                             })
