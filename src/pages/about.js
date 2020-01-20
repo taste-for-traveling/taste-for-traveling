@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
-import { Container } from 'react-bootstrap'
+import { Container, Badge } from 'react-bootstrap'
 
 
 const AboutPage = () => {
@@ -13,6 +13,7 @@ const AboutPage = () => {
                 <p>This bowl from Ichiran Ramen in our second video was delicious, but you can hardly tell because there are only 5 pixels in this screencap. A year and hundreds of dollars in camera equipment later, we took a trip to Portugal, a country we knew painfully little about except that they had good wine and spoke Portuguese. Lucky for us, it was an absolutely beautiful, photogenic country full of unforgettable meals (read: excellent video content). There was so much glorious 4K footage, it&rsquo;s taken almost 3 years to edit down into a vaguely presentable video.</p>
 
                 <p>Wondering what our wine tour of the Douro Valley was like? Should only be a couple years before you find out! Our priorities when traveling are Food, Drink, Adventure, and Video Creating - in that order. And now that we know how much great food is out there, we have to keep exploring to discover more. We&rsquo;ll keep posting videos of what we find, partly to serve as highly overproduced home videos to look back on in the future, and partly to share with our family, friends, and all of you.</p>
+                <Badge variant="primary">Gear</Badge>
             </Container>
         </Layout>
     )

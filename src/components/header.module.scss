@@ -1,0 +1,12 @@
+@import '../styles/theme';
+
+.link {
+    margin: 1rem;
+    text-shadow: $shadow;
+    color: $white;
+    font-weight: 700;
+}
+
+.icon {
+    filter: drop-shadow($shadow);
+}
