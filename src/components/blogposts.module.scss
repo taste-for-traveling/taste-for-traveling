@@ -1,1 +1,6 @@
-@import '../styles/custom';
+@import '../styles/theme.scss';
+
+.headerLink,
+.headerLink:hover {
+    color: $red;
+}
