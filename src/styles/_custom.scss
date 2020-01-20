@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,400i,600,600i,700,700i,900&display=swap');
+
+//My theme
+$white: #fff;
+$red: #8F1E1E;
+$black: #2A2A2A;
+$Titillium: 'Titillium Web', sans-serif;
+
+$link-color: $red;
+
+$font-family-sans-serif: $Titillium;
+
+$theme-colors: (
+  "primary": $red,
+);
+
+@import "node_modules/bootstrap/scss/bootstrap";
