@@ -8,36 +8,38 @@ import blogPostStyles from './blogposts.module.scss'
 const BlogPosts = () => {
     const posts = useStaticQuery(graphql`
         query {
-            allMarkdownRemark {
+            allContentfulBlogPost (
+            sort:{
+                fields:publishedDate,
+                order:DESC
+            }
+            ) {
             edges {
                 node {
-                    frontmatter {
-                        title,
-                        date,
-                        location
-                    }
-                    html,
-                    excerpt,
-                    fields {
-                        slug
-                    }
-                }
+                title
+                slug
+                publishedDate(formatString: "MMMM YYYY")
+                author
+                location {
+                    lon
+                    lat
+                  }
             }
             }
-        }
-        `)
+            }
+        }`)
     return (
         <CardColumns className={blogPostStyles.cardcolumns + ' my-5'}>
-            {posts.allMarkdownRemark.edges.map((post, i) =>
+            {posts.allContentfulBlogPost.edges.map((post, i) =>
                 <Card key={i}>
                     <Card.Body>
                         <Card.Title as="div">
-                            <h3><Link to={`/blog/${post.node.fields.slug}`} className={ blogPostStyles.headerLink }>{post.node.frontmatter.title}</Link></h3>
+                            <h3><Link to={`/blog/${post.node.slug}`} className={ blogPostStyles.headerLink }>{post.node.title}</Link></h3>
                             <Badge variant="primary">
                                 <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
-                                {post.node.frontmatter.location}
+                                {post.node.location.lon + ', ' + post.node.location.lat}
                             </Badge>
-                            <date className="d-block text-muted mt-1"><small>{post.node.frontmatter.date}</small></date>
+                            <date className="d-block text-muted mt-1"><small>{post.node.date}</small></date>
                         </Card.Title>
                         <Card.Text>
                             {post.node.excerpt}
