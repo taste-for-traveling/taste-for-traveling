@@ -73,7 +73,7 @@ const Footer = () => {
                         <ListGroup variant="flush">
                             {
                                 socialLinks.map((socialLink, i) =>
-                                    <ListGroup.Item key={i}><a href={socialLink.url} target="_blank">{socialLink.title}</a></ListGroup.Item>
+                                    <ListGroup.Item key={i}><a href={socialLink.url} target="_blank" rel="noopener noreferrer">{socialLink.title}</a></ListGroup.Item>
                                 )
                             }
                         </ListGroup>

@@ -23,7 +23,6 @@ const BlogPosts = () => {
             }
         }
         `)
-    console.log(posts)
     return (
         <CardColumns className={blogPostStyles.cardcolumns + ' my-5'}>
             {posts.allMarkdownRemark.edges.map((post, i) =>
@@ -32,8 +31,10 @@ const BlogPosts = () => {
                         <Card.Title as="div">
                             <h3>{post.node.frontmatter.title}</h3>
                             <Badge variant="primary">
-                            <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
-                            {post.node.frontmatter.location}</Badge>
+                                <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
+                                {post.node.frontmatter.location}
+                            </Badge>
+                            <date className="d-block text-muted mt-1"><small>{post.node.frontmatter.date}</small></date>
                         </Card.Title>
                         <Card.Text>
                             

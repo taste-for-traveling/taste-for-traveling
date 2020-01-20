@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
-import { Container, CardColumns, Card } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import BlogPosts from '../components/blogposts'
 
 const BlogPage = () => {

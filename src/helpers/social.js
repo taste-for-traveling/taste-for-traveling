@@ -1,9 +1,3 @@
-const youtube = 'https://www.youtube.com/channel/UC2cpbcMO2louHxVZob43iEw'
-
-const instagram = 'https://www.instagram.com/tastefortraveling/'
-
-const facebook = 'https://www.facebook.com/TasteforTraveling/'
-
 export const social = (site) => {
     let url;
     switch (site) {

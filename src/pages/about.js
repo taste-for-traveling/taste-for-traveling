@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
-import { Jumbotron, Container, Badge } from 'react-bootstrap'
+import { Container, Badge } from 'react-bootstrap'
 
 
 const AboutPage = () => {
