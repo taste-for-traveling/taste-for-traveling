@@ -1,11 +1,48 @@
 import React from 'react'
 import { Container, Row, Col, ListGroup } from 'react-bootstrap'
 import { Link } from 'gatsby'
+import { social } from '../helpers/social'
 
- const Footer = () => {
-     return(
-         <footer>
-             <Container className="my-5">
+const socialLinks = [
+    {
+        key: 1,
+        title: 'YouTube',
+        url: social('youtube'),
+    },
+    {
+        key: 1,
+        title: 'Instagram',
+        url: social('instagram'),
+    },
+    {
+        key: 1,
+        title: 'Facebook',
+        url: social('facebook'),
+    }
+]
+
+const siteLinks = [
+    {
+        key: 1,
+        title: 'Home',
+        url: '/'
+    },
+    {
+        key: 2,
+        title: 'Blog',
+        url: '/blog'
+    },
+    {
+        key: 3,
+        title: 'About',
+        url: '/about'
+    }
+]
+
+const Footer = () => {
+    return (
+        <footer>
+            <Container className="my-5">
                 <Row>
                     <Col>
                         <h3>Taste for Traveling</h3>
@@ -14,23 +51,27 @@ import { Link } from 'gatsby'
                     <Col>
                         <h3>On This Site</h3>
                         <ListGroup variant="flush">
-                            <ListGroup.Item><Link to="/">Home</Link></ListGroup.Item>
-                            <ListGroup.Item><Link to="/blog">Blog</Link></ListGroup.Item>
-                            <ListGroup.Item><Link to="/about">About</Link></ListGroup.Item>
-                        </ListGroup>  
+                        {
+                            siteLinks.map((siteLink, i) =>
+                                <ListGroup.Item><Link to={siteLink.url}>{siteLink.title}</Link></ListGroup.Item>
+                            )
+                        }
+                        </ListGroup>
                     </Col>
                     <Col>
                         <h3>Social</h3>
                         <ListGroup variant="flush">
-                            <ListGroup.Item><a href="https://www.youtube.com/channel/UC2cpbcMO2louHxVZob43iEw" target="_blank">YouTube</a></ListGroup.Item>
-                            <ListGroup.Item><a href="https://www.instagram.com/tastefortraveling/" target="_blank">Instagram</a></ListGroup.Item>
-                            <ListGroup.Item><a href="https://www.facebook.com/TasteforTraveling/" target="_blank">Facebook</a></ListGroup.Item>
+                        {
+                            socialLinks.map((socialLink, i) =>
+                                <ListGroup.Item><a href={socialLink.url} target="_blank">{socialLink.title}</a></ListGroup.Item>
+                            )
+                        }
                         </ListGroup>
                     </Col>
                 </Row>
-             </Container>
-         </footer>
-     )
- }
+            </Container>
+        </footer>
+    )
+}
 
- export default Footer
+export default Footer
