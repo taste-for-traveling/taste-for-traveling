@@ -5,17 +5,63 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import headerStyles from './header.module.scss'
 
+const navItems = [
+    {
+        key: 1,
+        title: 'Home',
+        url: '/',
+        type: 'internal'
+    },
+    {
+        key: 2,
+        title: 'Blog',
+        url: '/blog',
+        type: 'internal'
+    },
+    {
+        key: 3,
+        title: 'About',
+        url: '/about',
+        type: 'internal'
+    },
+    {
+        key: 4,
+        title: 'Facebook',
+        url: 'https://www.facebook.com/TasteforTraveling/',
+        type: 'external'
+    },
+    {
+        key: 5,
+        title: 'Instagram',
+        url: 'https://www.instagram.com/tastefortraveling/',
+        type: 'external'
+    },
+    {
+        key: 6,
+        title: 'YouTube',
+        url: 'https://www.youtube.com/channel/UC2cpbcMO2louHxVZob43iEw',
+        type: 'external'
+    }
+]
+
 const Header = () => {
     return (
         <header>
             <Navbar collapseOnSelect bg="transparent" expand="lg" fixed="top">
                 <Nav className="justify-content-end" activeKey="/">
-                    <Nav.Item as="nav-link"><Link to="/" className={ headerStyles.link }>Home</Link></Nav.Item>
-                    <Nav.Item as="nav-link"><Link to="/blog" className={ headerStyles.link }>Blog</Link></Nav.Item>
-                    <Nav.Item as="nav-link"><Link to="/about" className={ headerStyles.link }>About</Link></Nav.Item>
-                    <Nav.Item as="nav-link"><a href="https://www.facebook.com/TasteforTraveling/" target="_blank" className={ headerStyles.link }>Facebook <FontAwesomeIcon icon={ faChevronRight } className={ headerStyles.icon } /></a></Nav.Item>
-                    <Nav.Item as="nav-link"><a href="https://www.instagram.com/tastefortraveling/" target="_blank" className={ headerStyles.link }>Instagram <FontAwesomeIcon icon={ faChevronRight } className={ headerStyles.icon } /></a></Nav.Item>
-                    <Nav.Item as="nav-link"><a href="https://www.instagram.com/tastefortraveling/" target="_blank" className={ headerStyles.link }>YouTube <FontAwesomeIcon icon={ faChevronRight } className={ headerStyles.icon } /></a></Nav.Item>
+                    {
+                        navItems.map((navItem, i) => {
+                            if (navItem.type === 'internal') {
+                                return (
+                                    <Nav.Item as="nav-link" key={i}><Link to={navItem.url} className={headerStyles.link}>{navItem.title}</Link></Nav.Item>
+                                )
+                            } else if (navItem.type === 'external') {
+                                return(
+                                    <Nav.Item as="nav-link"><a href={navItem.url} target="_blank" className={headerStyles.link}>{navItem.title} <FontAwesomeIcon icon={faChevronRight} className={headerStyles.icon} /></a></Nav.Item>
+                                )
+                            }
+                        })
+                    }
                 </Nav>
             </Navbar>
         </header>
