@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "env-cmd -f .env.development gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -30,6 +30,7 @@
     "react-fontawesome": "^1.7.1"
   },
   "devDependencies": {
+    "env-cmd": "^10.0.1",
     "prettier": "^1.19.1"
   },
   "repository": {
