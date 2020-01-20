@@ -5,6 +5,15 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: 'Taste for Traveling',
+    author: 'Douglas Odell',
+    social: {
+      youtube: 'https://www.youtube.com/channel/UC2cpbcMO2louHxVZob43iEw',
+      facebook: 'https://www.facebook.com/TasteforTraveling/',
+      instagram: 'https://www.instagram.com/tastefortraveling/'
+    }
+  },
   plugins: [
     'gatsby-plugin-sass'
   ]
