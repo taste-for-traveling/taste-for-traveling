@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { Container } from 'react-bootstrap'
 import Layout from '../components/Layout'
-import '../styles/index.css'
+import '../styles/index.scss'
 
 const IndexPage = () => {
     return(
