@@ -30,7 +30,7 @@ const Blog = (props) => {
     return (
         <Layout title={props.data.markdownRemark.frontmatter.title}>
             <Container>
-                <Badge variant="primary">
+                <Badge variant="primary" className="mb-2">
                     <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
                     {props.data.markdownRemark.frontmatter.location}
                 </Badge>
