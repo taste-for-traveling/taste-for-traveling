@@ -13,8 +13,8 @@ const Header = () => {
                 integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
                 crossorigin="anonymous"
             />
-            <Navbar bg="transparent" expand="lg">
-                <Nav>
+            <Navbar collapseOnSelect bg="transparent" expand="lg" fixed="top">
+                <Nav className="justify-content-end" activeKey="/">
                     <Nav.Item as="nav-link"><Link to="/" className="m-3">Home</Link></Nav.Item>
                     <Nav.Item as="nav-link"><Link to="/blog" className="m-3">Blog</Link></Nav.Item>
                     <Nav.Item as="nav-link"><Link to="/about" className="m-3">About</Link></Nav.Item>

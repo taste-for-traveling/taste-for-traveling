@@ -1,12 +1,11 @@
 import React from 'react'
-import Header from '../components/header'
-import Footer from '../components/footer'
+import Layout from '../components/layout'
 import { Container } from 'react-bootstrap'
+
 
 const AboutPage = () => {
     return(
-        <div>
-            <Header />
+        <Layout>
             <Container>
                 <h1>About</h1>
                 <p>We&rsquo;re a Northeastern U.S. couple, but it only took one trip to Iceland for us to realize traveling abroad together added a whole new dimension to both our lives and our relationship. And we always knew we liked food and drinks. One of us is an actress. The other is a nerd for videography. Mix it all together and you have the perfect recipe for a spastic travel vlog series. Us scavenging the world for the best local food we can find, and recording it all so we don&rsquo;t forget.  From our humble beginnings with an Instagram account and a dream, we managed to cobble together a couple videos from our first life-changing trip to Japan in 2017. Unfortunately, we filmed the whole thing on a GoPro which we only realized was oriented sideways after we got back and started editing.</p>
@@ -15,8 +14,7 @@ const AboutPage = () => {
 
                 <p>Wondering what our wine tour of the Douro Valley was like? Should only be a couple years before you find out! Our priorities when traveling are Food, Drink, Adventure, and Video Creating - in that order. And now that we know how much great food is out there, we have to keep exploring to discover more. We&rsquo;ll keep posting videos of what we find, partly to serve as highly overproduced home videos to look back on in the future, and partly to share with our family, friends, and all of you.</p>
             </Container>
-            <Footer />
-        </div>
+        </Layout>
     )
 }
 
