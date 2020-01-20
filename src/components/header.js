@@ -3,6 +3,7 @@ import { Navbar, Nav } from 'react-bootstrap'
 import { Link } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { social } from '../helpers/social'
 import headerStyles from './header.module.scss'
 
 const navItems = [
@@ -27,19 +28,19 @@ const navItems = [
     {
         key: 4,
         title: 'Facebook',
-        url: 'https://www.facebook.com/TasteforTraveling/',
+        url: social('facebook'),
         type: 'external'
     },
     {
         key: 5,
         title: 'Instagram',
-        url: 'https://www.instagram.com/tastefortraveling/',
+        url: social('instagram'),
         type: 'external'
     },
     {
         key: 6,
         title: 'YouTube',
-        url: 'https://www.youtube.com/channel/UC2cpbcMO2louHxVZob43iEw',
+        url: social('youtube'),
         type: 'external'
     }
 ]
