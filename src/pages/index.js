@@ -12,9 +12,9 @@ const IndexPage = () => {
                 crossorigin="anonymous"
                 />
             <Nav>
-                <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/blog">Blog</Nav.Link>
-                <Nav.Link href="/about">About</Nav.Link>
+                <Nav.Item as="nav-link"><Link to="/" className="m-3">Home</Link></Nav.Item>
+                <Nav.Link as="nav-link"><Link to="/blog" className="m-3">Blog</Link></Nav.Link>
+                <Nav.Link as="nav-link"><Link to="/about" className="m-3">About</Link></Nav.Link>
             </Nav>
 
             <h1>Taste for Traveling</h1>
