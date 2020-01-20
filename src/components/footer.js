@@ -63,7 +63,7 @@ const Footer = () => {
                         <ListGroup variant="flush">
                             {
                                 siteLinks.map((siteLink, i) =>
-                                    <ListGroup.Item><Link to={siteLink.url}>{siteLink.title}</Link></ListGroup.Item>
+                                    <ListGroup.Item key={i}><Link to={siteLink.url}>{siteLink.title}</Link></ListGroup.Item>
                                 )
                             }
                         </ListGroup>
@@ -73,7 +73,7 @@ const Footer = () => {
                         <ListGroup variant="flush">
                             {
                                 socialLinks.map((socialLink, i) =>
-                                    <ListGroup.Item><a href={socialLink.url} target="_blank">{socialLink.title}</a></ListGroup.Item>
+                                    <ListGroup.Item key={i}><a href={socialLink.url} target="_blank">{socialLink.title}</a></ListGroup.Item>
                                 )
                             }
                         </ListGroup>

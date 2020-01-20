@@ -8,6 +8,7 @@ $theme-colors: (
 );
 
 $border-radius: 0;
+$card-columns-count: 2;
 
 //Text
 $font-family-base: $Titillium;
@@ -29,6 +30,9 @@ $link-color: $blue;
 
 //Jumbotron
 $jumbotron-padding: 0;
+
+//Card
+$card-border-width: 0;
 
 //Badge
 $badge-font-size: 100%;

@@ -61,11 +61,11 @@ const Header = () => {
                             navItems.map((navItem, i) => {
                                 if (navItem.type === 'internal') {
                                     return (
-                                        <Nav.Item as="nav-link" key={i}><Link to={navItem.url} className={headerStyles.link} activeClassName={headerStyles.activeLink}>{navItem.title}</Link></Nav.Item>
+                                        <Nav.Item key={i} as="nav-link" key={i}><Link to={navItem.url} className={headerStyles.link} activeClassName={headerStyles.activeLink}>{navItem.title}</Link></Nav.Item>
                                     )
                                 } else if (navItem.type === 'external') {
                                     return(
-                                        <Nav.Item as="nav-link"><a href={navItem.url} target="_blank" className={headerStyles.link}>{navItem.title} <FontAwesomeIcon icon={faChevronRight} className={headerStyles.icon} /></a></Nav.Item>
+                                        <Nav.Item key={i} as="nav-link"><a href={navItem.url} target="_blank" className={headerStyles.link}>{navItem.title} <FontAwesomeIcon icon={faChevronRight} className={headerStyles.icon} /></a></Nav.Item>
                                     )
                                 }
                             })

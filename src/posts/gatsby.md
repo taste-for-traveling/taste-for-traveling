@@ -1,6 +1,7 @@
 ---
 title: "My experience building this site"
 date: "2019-01-20"
+location: "Porto, Portugal"
 ---
 
 I'm trying to build a blog site using Gatsby, graphql, and eventually Contentful as the CMS. So far it has been excruciating. But I can see where this is headed. As long as I follow this tutorial to the T then I think there's hope I might actually be able to do it.
