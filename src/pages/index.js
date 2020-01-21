@@ -10,12 +10,15 @@ import 'bootstrap';
 
 //Styles
 import '../styles/index.scss'
-
+import homePageVideoStyles from '../styles/homepagevideo.module.scss'
 
 const IndexPage = () => {
     return(
         <Layout>
-            <Head />
+            <Head title="Home" />
+            <div className={homePageVideoStyles.container + 'bg-dark'}>
+                Big Boi
+            </div>
             <Container className="my-5">
                 <Row>
                     <Col lg="8">

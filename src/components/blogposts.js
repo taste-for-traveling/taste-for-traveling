@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 
 //Styles
-import blogPostStyles from './blogposts.module.scss'
+import blogPostStyles from '../styles/blogposts.module.scss'
 
 const BlogPosts = () => {
     const posts = useStaticQuery(graphql`

@@ -18,7 +18,7 @@ import { social } from '../helpers/social'
 import logo from '../assets/TasteforTraveling-v2-700px.png'
 
 //Styles
-import headerStyles from './header.module.scss'
+import siteNavbarStyles from '../styles/sitenavbar.module.scss'
 
 const navItems = [
     {
@@ -59,7 +59,7 @@ const navItems = [
     }
 ]
 
-const Header = () => {
+const SiteNavbar = () => {
     return (
         <header>
                 <Navbar collapseOnSelect bg="transparent" expand="lg" fixed="top">
@@ -74,11 +74,11 @@ const Header = () => {
                             navItems.map((navItem, i) => {
                                 if (navItem.type === 'internal') {
                                     return (
-                                        <Nav.Item key={i} as="nav-link" key={i}><Link to={navItem.url} className={headerStyles.link} activeClassName={headerStyles.activeLink}>{navItem.title}</Link></Nav.Item>
+                                        <Nav.Item key={i} as="nav-link" key={i}><Link to={navItem.url} className={siteNavbarStyles.link} activeClassName={siteNavbarStyles.activeLink}>{navItem.title}</Link></Nav.Item>
                                     )
                                 } else if (navItem.type === 'external') {
                                     return(
-                                        <Nav.Item key={i} as="nav-link"><a href={navItem.url} target="_blank" rel="noopener noreferrer" className={headerStyles.link}>{navItem.title} <FontAwesomeIcon icon={faChevronRight} className={headerStyles.icon} /></a></Nav.Item>
+                                        <Nav.Item key={i} as="nav-link"><a href={navItem.url} target="_blank" rel="noopener noreferrer" className={siteNavbarStyles.link}>{navItem.title} <FontAwesomeIcon icon={faChevronRight} className={siteNavbarStyles.icon} /></a></Nav.Item>
                                     )
                                 }
                             })
@@ -91,4 +91,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default SiteNavbar
