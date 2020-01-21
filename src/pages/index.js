@@ -16,7 +16,7 @@ const IndexPage = () => {
     return(
         <Layout>
             <Head title="Home" />
-            <div className={homePageVideoStyles.container + 'bg-dark'}>
+            <div className={homePageVideoStyles.container + ' bg-dark'}>
                 Big Boi
             </div>
             <Container className="my-5">

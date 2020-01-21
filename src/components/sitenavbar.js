@@ -1,7 +1,7 @@
 import React from 'react'
 
 //Gatsby
-import { Link } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 
 //Bootstrap
 import { Container, Navbar, Nav, NavbarBrand } from 'react-bootstrap'
@@ -11,55 +11,64 @@ import { Container, Navbar, Nav, NavbarBrand } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
-//Helpers
-import { social } from '../helpers/social'
-
 //Assets
-import logo from '../assets/TasteforTraveling-v2-700px.png'
+import logo from '../static/TasteforTraveling-v2-700px.png'
 
 //Styles
 import siteNavbarStyles from '../styles/sitenavbar.module.scss'
 
-const navItems = [
-    {
-        key: 1,
-        title: 'Home',
-        url: '/',
-        type: 'internal'
-    },
-    {
-        key: 2,
-        title: 'Blog',
-        url: '/blog',
-        type: 'internal'
-    },
-    {
-        key: 3,
-        title: 'About',
-        url: '/about',
-        type: 'internal'
-    },
-    {
-        key: 4,
-        title: 'Facebook',
-        url: social('facebook'),
-        type: 'external'
-    },
-    {
-        key: 5,
-        title: 'Instagram',
-        url: social('instagram'),
-        type: 'external'
-    },
-    {
-        key: 6,
-        title: 'YouTube',
-        url: social('youtube'),
-        type: 'external'
-    }
-]
-
 const SiteNavbar = () => {
+    const data = useStaticQuery(graphql`
+        query {
+            site {
+            siteMetadata {
+                social {
+                youtube
+                facebook
+                instagram
+                }
+            }
+            }
+        }   
+    `)
+    const navItems = [
+        {
+            key: 1,
+            title: 'Home',
+            url: '/',
+            type: 'internal'
+        },
+        {
+            key: 2,
+            title: 'Blog',
+            url: '/blog',
+            type: 'internal'
+        },
+        {
+            key: 3,
+            title: 'About',
+            url: '/about',
+            type: 'internal'
+        },
+        {
+            key: 4,
+            title: 'Facebook',
+            url: data.site.siteMetadata.social.facebook,
+            type: 'external'
+        },
+        {
+            key: 5,
+            title: 'Instagram',
+            url: data.site.siteMetadata.social.instagram,
+            type: 'external'
+        },
+        {
+            key: 6,
+            title: 'YouTube',
+            url: data.site.siteMetadata.social.youtube,
+            type: 'external'
+        }
+    ]
     return (
         <header>
                 <Navbar collapseOnSelect bg="transparent" expand="lg" fixed="top">
