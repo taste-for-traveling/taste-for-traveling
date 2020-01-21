@@ -1,10 +1,23 @@
 import React from 'react'
-import { Container, Navbar, Nav, NavbarBrand } from 'react-bootstrap'
+
+//Gatsby
 import { Link } from 'gatsby'
+
+//Bootstrap
+import { Container, Navbar, Nav, NavbarBrand } from 'react-bootstrap'
+
+
+//FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+
+//Helpers
 import { social } from '../helpers/social'
+
+//Assets
 import logo from '../assets/TasteforTraveling-v2-700px.png'
+
+//Styles
 import headerStyles from './header.module.scss'
 
 const navItems = [

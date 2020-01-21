@@ -1,9 +1,19 @@
 import React from 'react'
+
+//Gatsby
 import { graphql } from 'gatsby'
+
+//Bootstrap
 import { Container, Badge } from 'react-bootstrap'
+
+//FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
+
+//Contentful
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+
+//Styles
 import blogBodyStyles from './blog.module.scss'
 
 import Layout from '../components/layout'

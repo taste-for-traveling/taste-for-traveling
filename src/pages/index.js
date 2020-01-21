@@ -1,12 +1,21 @@
 import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+
+//Components
+import Head from '../components/head'
 import Layout from '../components/Layout'
+
+//Bootstrap
+import { Container, Row, Col } from 'react-bootstrap'
 import 'bootstrap';
+
+//Styles
 import '../styles/index.scss'
+
 
 const IndexPage = () => {
     return(
         <Layout>
+            <Head />
             <Container className="my-5">
                 <Row>
                     <Col lg="8">

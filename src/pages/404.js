@@ -1,6 +1,9 @@
 import React from 'react'
+
+//Gatsby
 import { Link } from 'gatsby'
 
+//Components
 import Layout from '../components/layout'
 
 const NotFound = () => {

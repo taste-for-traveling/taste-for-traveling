@@ -1,8 +1,14 @@
 import React from 'react'
+
+//Bootstrap
+import { Jumbotron, Container } from 'react-bootstrap'
+
+//Components
 import Header from '../components/header'
 import Footer from '../components/footer'
+
+//Styles
 import layoutStyles from './layout.module.scss'
-import { Jumbotron, Container } from 'react-bootstrap'
 
 const Layout = (props) => {
     return (

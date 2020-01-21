@@ -1,6 +1,10 @@
 import React from 'react'
-import Layout from '../components/layout'
+
+//Bootstrap
 import { Container } from 'react-bootstrap'
+
+//Components
+import Layout from '../components/layout'
 import BlogPosts from '../components/blogposts'
 
 const BlogPage = () => {

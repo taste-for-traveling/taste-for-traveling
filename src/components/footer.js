@@ -1,6 +1,12 @@
 import React from 'react'
-import { Container, Row, Col, ListGroup } from 'react-bootstrap'
+
+//Gatsby
 import { Link, graphql, useStaticQuery } from 'gatsby'
+
+//Bootstrap
+import { Container, Row, Col, ListGroup } from 'react-bootstrap'
+
+//Helpers
 import { social } from '../helpers/social'
 
 const socialLinks = [

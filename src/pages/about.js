@@ -1,6 +1,10 @@
 import React from 'react'
-import Layout from '../components/layout'
+
+//Bootstrap
 import { Container, Badge } from 'react-bootstrap'
+
+//Components
+import Layout from '../components/layout'
 
 
 const AboutPage = () => {

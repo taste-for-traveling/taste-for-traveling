@@ -1,8 +1,16 @@
 import React from 'react'
+
+//Gatsby
 import { Link, useStaticQuery, graphql } from 'gatsby'
+
+//Bootstrap
 import { CardColumns, Card, Badge } from 'react-bootstrap'
+
+//FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
+
+//Styles
 import blogPostStyles from './blogposts.module.scss'
 
 const BlogPosts = () => {
