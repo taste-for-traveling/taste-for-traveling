@@ -7,7 +7,7 @@ import { Link } from 'gatsby'
 import { Container } from 'react-bootstrap'
 
 //Components
-import Layout from '../components/layout'
+import Frame from '../components/frame'
 import Head from '../components/head'
 
 //Styles
@@ -17,14 +17,14 @@ export const title = "Here be dragons"
 
 const NotFound = () => {
     return(
-        <Layout>
+        <Frame>
             <Head title={title} />
             <Container className={notFoundStyles.container}>
                 <h1 className="display-1">Whoops...</h1>
                 <h3>Nothing to see or eat here.</h3>
                 <p><Link to="/">Back home</Link></p>
             </Container>
-        </Layout>
+        </Frame>
     )
 }
 

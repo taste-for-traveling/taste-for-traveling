@@ -1,10 +1,10 @@
 import React from 'react'
 
 //Bootstrap
-import { Container, Badge } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 
 //Components
-import Layout from '../components/layout'
+import Frame from '../components/frame'
 import Head from '../components/head'
 import DisplayHeader from '../components/displayheader'
 
@@ -12,7 +12,7 @@ export const title = "About"
 
 const AboutPage = () => {
     return(
-        <Layout>
+        <Frame>
             <Head title={title} />
             <DisplayHeader title={title}/>
             <Container>
@@ -23,7 +23,7 @@ const AboutPage = () => {
                 <p>Wondering what our wine tour of the Douro Valley was like? Should only be a couple years before you find out! Our priorities when traveling are Food, Drink, Adventure, and Video Creating - in that order. And now that we know how much great food is out there, we have to keep exploring to discover more. We&rsquo;ll keep posting videos of what we find, partly to serve as highly overproduced home videos to look back on in the future, and partly to share with our family, friends, and all of you.</p>
                 <h2>Gear</h2>
             </Container>
-        </Layout>
+        </Frame>
     )
 }
 

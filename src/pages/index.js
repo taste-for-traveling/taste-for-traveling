@@ -2,7 +2,7 @@ import React from 'react'
 
 //Components
 import Head from '../components/head'
-import Layout from '../components/Layout'
+import Frame from '../components/frame'
 
 //Bootstrap
 import { Container, Row, Col } from 'react-bootstrap'
@@ -16,7 +16,7 @@ export const title = "Home"
 
 const IndexPage = () => {
     return(
-        <Layout>
+        <Frame>
             <Head title={title} />
             <div className={homePageVideoStyles.container + ' bg-dark'}>
                 Big Boi
@@ -31,7 +31,7 @@ const IndexPage = () => {
                     </Col>
                 </Row>
             </Container>
-        </Layout>
+        </Frame>
     )
 }
 

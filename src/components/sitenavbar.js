@@ -83,13 +83,14 @@ const SiteNavbar = () => {
                             navItems.map((navItem, i) => {
                                 if (navItem.type === 'internal') {
                                     return (
-                                        <Nav.Item key={i} as="nav-link" key={i}><Link to={navItem.url} className={siteNavbarStyles.link} activeClassName={siteNavbarStyles.activeLink}>{navItem.title}</Link></Nav.Item>
+                                        <Nav.Item key={i} as="nav-link"><Link to={navItem.url} className={siteNavbarStyles.link} activeClassName={siteNavbarStyles.activeLink}>{navItem.title}</Link></Nav.Item>
                                     )
                                 } else if (navItem.type === 'external') {
                                     return(
                                         <Nav.Item key={i} as="nav-link"><a href={navItem.url} target="_blank" rel="noopener noreferrer" className={siteNavbarStyles.link}>{navItem.title} <FontAwesomeIcon icon={faChevronRight} className={siteNavbarStyles.icon} /></a></Nav.Item>
                                     )
                                 }
+                                return null;
                             })
                         }
                     </Nav>

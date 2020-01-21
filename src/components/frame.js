@@ -5,14 +5,14 @@ import SiteNavbar from '../components/sitenavbar'
 import Footer from '../components/footer'
 
 //Styles
-import layoutStyles from '../styles/layout.module.scss'
+import frameStyles from '../styles/frame.module.scss'
 
-const Layout = (props) => {
+const frame = (props) => {
     return (
         <div>
             <SiteNavbar />
-            <div className={layoutStyles.container}>
-                <div className={layoutStyles.content}>
+            <div className={frameStyles.container}>
+                <div className={frameStyles.content}>
                     {props.children}
                 </div>
                 <Footer />
@@ -21,4 +21,4 @@ const Layout = (props) => {
     )
 }
 
-export default Layout
+export default frame

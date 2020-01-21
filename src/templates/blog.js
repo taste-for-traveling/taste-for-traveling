@@ -17,7 +17,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import blogBodyStyles from './blog.module.scss'
 
 //Components
-import Layout from '../components/layout'
+import Frame from '../components/frame'
 import Head from '../components/head'
 
 export const query = graphql`
@@ -48,7 +48,7 @@ const Blog = (props) => {
     }
   }
   return (
-      <Layout title={props.data.contentfulBlogPost.title}>
+      <Frame title={props.data.contentfulBlogPost.title}>
           <Head title={props.data.contentfulBlogPost.title} />
           <Container className={blogBodyStyles.wrapper}>
               <h1 className="display-1">{props.data.contentfulBlogPost.title}</h1>
@@ -62,7 +62,7 @@ const Blog = (props) => {
                 { documentToReactComponents(props.data.contentfulBlogPost.body.json, options) }
               </div>
           </Container>
-      </Layout>
+      </Frame>
   )
 }
 
