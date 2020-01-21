@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,400i,600,600i,700,700i,900&display=swap');
+@import './bootstrap/bootstrap.min.css';
 
 //My theme
 @import './theme.scss';
@@ -39,4 +40,4 @@ $badge-font-size: 100%;
 $badge-padding-y: 0.5rem;
 $badge-padding-x: 1.5rem;
 
-@import "node_modules/bootstrap/scss/bootstrap";
+@import './bootstrap/scss/bootstrap'
