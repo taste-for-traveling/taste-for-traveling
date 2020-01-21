@@ -16,7 +16,9 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 //Styles
 import blogBodyStyles from './blog.module.scss'
 
+//Components
 import Layout from '../components/layout'
+import Head from '../components/head'
 
 export const query = graphql`
   query($slug: String!) {
@@ -47,14 +49,16 @@ const Blog = (props) => {
   }
   return (
       <Layout title={props.data.contentfulBlogPost.title}>
-          <Container>
-              <Badge variant="primary" className="mb-2">
+          <Head title={props.data.contentfulBlogPost.title} />
+          <Container className={blogBodyStyles.wrapper}>
+              <h1 className="display-1">{props.data.contentfulBlogPost.title}</h1>
+              <Badge variant="primary" className="mt-5 mb-2">
                   <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
                   {props.data.contentfulBlogPost.location.lat + ', ' + props.data.contentfulBlogPost.location.lon}
               </Badge>
               <p><date>{props.data.contentfulBlogPost.publishedDate}</date></p>
-              <p>{props.data.contentfulBlogPost.author}</p>
-              <div className={ blogBodyStyles.blogBody + ' my-4'}>
+              <p><strong>{props.data.contentfulBlogPost.author}</strong></p>
+              <div className={ blogBodyStyles.blogBody + ' my-5'}>
                 { documentToReactComponents(props.data.contentfulBlogPost.body.json, options) }
               </div>
           </Container>

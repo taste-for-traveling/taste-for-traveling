@@ -1,4 +1,13 @@
+@import '../styles/theme.scss';
+
+.wrapper {
+    margin: 5rem 0;
+}
+
 .blogBody {
+    h1, h2, h3, h4, h5, h6 {
+        color: $black;
+    }
     h2 > b {
         font-weight: 700;
     }
