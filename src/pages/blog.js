@@ -6,12 +6,16 @@ import { Container } from 'react-bootstrap'
 //Components
 import Layout from '../components/layout'
 import Head from '../components/head'
+import DisplayHeader from '../components/displayheader'
 import BlogPosts from '../components/blogposts'
 
-const BlogPage = () => {
+export const title = "Blog"
+
+const BlogPage = (props) => {
     return (
-        <Layout title={'Blog'}>
-            <Head title="Blog" />
+        <Layout title={title}>
+            <Head title={title} />
+            <DisplayHeader title={title}/>
             <Container>
                 <BlogPosts />
             </Container>

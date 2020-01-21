@@ -6,27 +6,6 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 //Bootstrap
 import { Container, Row, Col, ListGroup } from 'react-bootstrap'
 
-//Helpers
-import { social } from '../helpers/social'
-
-const socialLinks = [
-    {
-        key: 1,
-        title: 'YouTube',
-        url: social('youtube'),
-    },
-    {
-        key: 1,
-        title: 'Instagram',
-        url: social('instagram'),
-    },
-    {
-        key: 1,
-        title: 'Facebook',
-        url: social('facebook'),
-    }
-]
-
 const siteLinks = [
     {
         key: 1,
@@ -51,10 +30,35 @@ const Footer = () => {
             site {
                 siteMetadata {
                     author
+                    social {
+                        youtube
+                        facebook
+                        instagram
+                    }
                 }
             }
         }
     `)
+    const socialLinks = [
+        {
+            key: 4,
+            title: 'Facebook',
+            url: data.site.siteMetadata.social.facebook,
+            type: 'external'
+        },
+        {
+            key: 5,
+            title: 'Instagram',
+            url: data.site.siteMetadata.social.instagram,
+            type: 'external'
+        },
+        {
+            key: 6,
+            title: 'YouTube',
+            url: data.site.siteMetadata.social.youtube,
+            type: 'external'
+        }
+    ]
     return (
         <footer>
             <Container className="my-5">
