@@ -4,6 +4,9 @@ import { Helmet } from 'react-helmet'
 //Gatsby
 import { useStaticQuery, graphql } from 'gatsby'
 
+require('jquery')
+require('bootstrap')
+
 const Head = ({ title }) => {
     const data = useStaticQuery(graphql`
         query {

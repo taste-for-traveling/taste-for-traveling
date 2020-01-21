@@ -6,7 +6,6 @@ import Frame from '../components/frame'
 
 //Bootstrap
 import { Container, Row, Col } from 'react-bootstrap'
-import 'bootstrap';
 
 //Styles
 import '../styles/index.scss'
