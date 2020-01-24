@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 //Assets
-import logo from '../static/TasteforTraveling-v2-700px.png'
+import logo from '../static/t4t-globe-fork-hashi.svg'
 
 //Styles
 import siteNavbarStyles from '../styles/sitenavbar.module.scss'
@@ -71,14 +71,14 @@ const SiteNavbar = () => {
     ]
     return (
         <header>
-                <Navbar collapseOnSelect bg="transparent" expand="lg" fixed="top">
+                <Navbar collapseOnSelect bg="transparent" expand="lg" fixed="top" className={`${siteNavbarStyles.navbar} p-0`}>
                     <Container className="align-items-start">
                     <NavbarBrand>
-                        <Link to="/">
-                            <img src={logo} alt="Taste for Traveling home" width="300px" height="auto" />
+                        <Link to="/" className={siteNavbarStyles.logo}>
+                            <img src={logo} alt="Taste for Traveling home" width="300px" height="auto" /> <strong>Taste</strong> for Traveling
                         </Link>
                     </NavbarBrand>
-                    <Nav className="justify-content-end" activeKey="/">
+                    <Nav className={`${siteNavbarStyles.nav} justify-content-end w-100`} activeKey="/">
                         {
                             navItems.map((navItem, i) => {
                                 if (navItem.type === 'internal') {

@@ -2,9 +2,13 @@ $white: #fff;
 $red: #8F1E1E;
 $blue: #1C7BD9;
 $black: #2A2A2A;
+$dark-gray: #242424;
 
 $Titillium: 'Titillium Web', sans-serif;
 
 $shadow: 0 0 0.4em rgba(0,0,0,0.5);
-$shadow-tight: 0 0 0.1em rgba(0,0,0,0.3);
-$shadow-red: 0 0 0.4em #8F1E1E;
+
+//overwrite bootstrap styles
+.bg-dark {
+    background-color: $dark-gray!important;
+}

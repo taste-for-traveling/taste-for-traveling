@@ -5,6 +5,8 @@ import SiteNavbar from '../components/sitenavbar'
 import Footer from '../components/footer'
 
 //Styles
+import '../styles/bootstrap/bootstrap.min.css'
+import '../styles/app.scss'
 import frameStyles from '../styles/frame.module.scss'
 
 const frame = (props) => {

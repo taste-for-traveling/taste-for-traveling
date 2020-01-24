@@ -1,24 +1,21 @@
-@import '../styles/theme.scss';
+@import '../styles/theme';
 
 .pageHeader {
     height: 30vh;
     min-height: 200px;
 }
 
-$fontsize: 8vmin;
+// .h1 {
+//     color: $white;
+//     font-size: 3.5rem;
+//     margin-top: 2rem;
+//     margin-bottom: 3vh;
+//     line-height: 10vh;
+// }
 
-.h1 {
-    color: $white;
-    text-shadow: $shadow-tight;
-    font-size: 3.5rem;
-    margin-top: 2rem;
-    margin-bottom: 3vh;
-    line-height: 10vh;
-}
-
-@media (min-height: 550px) {
-    .h1 {
-        font-size: $fontsize;
-        line-height: $fontsize;
-    }
-}
+// @media (min-height: 550px) {
+//     .h1 {
+//         font-size: $fontsize;
+//         line-height: $fontsize;
+//     }
+// }

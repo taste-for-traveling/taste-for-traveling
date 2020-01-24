@@ -15,6 +15,14 @@ module.exports = {
     }
   },
   plugins: [
+    {
+      resolve: `gatsby-source-youtube-v2`,
+      options: {
+        channelId: 'UC2cpbcMO2louHxVZob43iEw',
+        apiKey: process.env.YOUTUBE_BUILDTIME_API_KEY,
+        maxVideos: 10
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-contentful',
