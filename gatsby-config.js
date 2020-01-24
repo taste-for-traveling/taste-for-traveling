@@ -11,10 +11,17 @@ module.exports = {
     social: {
       youtube: 'https://www.youtube.com/channel/UC2cpbcMO2louHxVZob43iEw',
       facebook: 'https://www.facebook.com/TasteforTraveling/',
-      instagram: 'https://www.instagram.com/tastefortraveling/'
+      instagram: 'https://www.instagram.com/tastefortraveling/',
+      instagramHandle: 'tastefortraveling'
     }
   },
   plugins: [
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `tastefortraveling`,
+      },
+    },
     {
       resolve: `gatsby-source-youtube-v2`,
       options: {

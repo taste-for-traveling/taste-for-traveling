@@ -8,7 +8,7 @@ import displayHeaderStyles from '../styles/displayheader.module.scss'
 
 const DisplayHeader = (props) => {
     return (
-        <Jumbotron className={`${displayHeaderStyles.pageHeader} mb-5`} style={`backgroundImage: 'url(${ props.image })'`}>
+        <Jumbotron className={`${displayHeaderStyles.pageHeader} mb-5`}>
             <Container className="d-flex h-100">
                 <h1 className={ displayHeaderStyles.h1 + ' align-self-end'} >{props.title}</h1>
             </Container>

@@ -28,6 +28,7 @@
     "gatsby-remark-relative-images": "^0.2.3",
     "gatsby-source-contentful": "^2.1.77",
     "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-source-instagram": "^0.6.1",
     "gatsby-source-youtube-v2": "git+https://github.com/iyeraravind/gatsby-source-youtube.git",
     "gatsby-transformer-remark": "^2.6.48",
     "jquery": "^3.4.1",
