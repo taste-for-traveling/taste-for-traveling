@@ -54,7 +54,7 @@ const Blog = (props) => {
               <h1 className="display-1">{props.data.contentfulBlogPost.title}</h1>
               <Badge variant="primary" className="mt-5 mb-2">
                   <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
-                  {props.data.contentfulBlogPost.location.lat + ', ' + props.data.contentfulBlogPost.location.lon}
+                  {/* {props.data.contentfulBlogPost.location.lat + ', ' + props.data.contentfulBlogPost.location.lon} */}
               </Badge>
               <p><date>{props.data.contentfulBlogPost.publishedDate}</date></p>
               <p><strong>{props.data.contentfulBlogPost.author}</strong></p>
