@@ -6,6 +6,9 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 //Bootstrap
 import { Container, Row, Col, ListGroup } from 'react-bootstrap'
 
+//Static
+import Logo from '../static/TasteforTraveling-v2-700px.png'
+
 const siteLinks = [
     {
         key: 1,
@@ -64,9 +67,9 @@ const Footer = () => {
             <Container className="my-5">
                 <Row>
                     <Col>
-                        <h3>Taste for Traveling</h3>
+                        <img src={Logo} alt="Taste for Traveling" className="img-fluid" />
                         <p>A taste for travel, bit by the travel bug, wanderlust&mdash;whatever you want to call it, we&rsquo;ve got it. Plus we need food to live.</p>
-    <p>&copy;{new Date().getFullYear()} Created by { data.site.siteMetadata.author }</p>
+                        <p>&copy;{new Date().getFullYear()} Created by { data.site.siteMetadata.author }</p>
                     </Col>
                     <Col>
                         <h3>On This Site</h3>

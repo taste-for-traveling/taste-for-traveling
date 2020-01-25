@@ -1,5 +1,7 @@
 @import '../styles/theme';
 
+$navHeight: 3rem;
+
 .navbar:before {
     content: "";
     display: block;
@@ -13,7 +15,11 @@
 }
 
 .navbar:before, .navItem {
-    height: 2rem;
+    height: $navHeight;
+}
+
+.navItem {
+
 }
 
 .navItem:hover {
@@ -22,7 +28,8 @@
 
 .logo {
     color: $white;
-    font-size: 2rem;
+    font-size: $navHeight * .7;
+    line-height: $navHeight * .5;
 
     &:hover {
         text-decoration: none;
@@ -30,14 +37,16 @@
     }
 
     img {
-        width: 5rem;
+        height: $navHeight;
+        width: auto;
     }
 }
 
 .link {
-    margin: 1rem;
     color: $white;
     font-weight: bold;
+    padding: 0.5rem 1rem;
+    height: $navHeight;
 }
 
 .link:hover {
@@ -46,7 +55,7 @@
 }
 
 .activeLink {
-    // text-shadow: $shadow-red;
+    background-color: $red;
 }
 
 .icon {

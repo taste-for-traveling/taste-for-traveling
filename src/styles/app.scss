@@ -17,6 +17,14 @@ h2 {
     background-color: $red;
 }
 
+section.container,
+section.container-fluid {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
 // h1, h2, h3, h4, h5, h6 {
 //     color: $white;
 // }

@@ -1,8 +1,14 @@
 @import './theme.scss';
 
-.container {
-    min-height: 80vh;
+.heroContainer {
+    height: 95vh;
     // position: relative;
+}
+
+.heroImage {
+    top: -50%;
+    left: 0;
+    filter: brightness(80%);
 }
 
 .latestVideo {

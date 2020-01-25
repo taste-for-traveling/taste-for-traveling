@@ -6,6 +6,7 @@ import Footer from '../components/footer'
 
 //Styles
 import '../styles/bootstrap/bootstrap.min.css'
+import "animate.css/animate.min.css"
 import '../styles/app.scss'
 import frameStyles from '../styles/frame.module.scss'
 
