@@ -16,7 +16,7 @@ import indexStyles from '../styles/index.module.scss'
 
 //Static
 import playIcon from '../static/icon-play.svg'
-import hero from '../static/hero.jpg'
+// import hero from '../static/hero.jpg'
 
 export const siteTitle = "Home"
 
@@ -26,6 +26,14 @@ export const elementIn = "fadeInUp"
 const IndexPage = () => {
     const data = useStaticQuery(graphql`
     query {
+        contentfulHero {
+            title
+            image {
+              file {
+                url
+              }
+            }
+          },
         allYoutubeVideo(limit: 1) {
           edges {
             node {
@@ -51,14 +59,15 @@ const IndexPage = () => {
             }
           }
         }
-      }`
+      }
+      `
     )
 
     return (
         <Frame>
             <Head title={siteTitle} />
             <Container className={`${indexStyles.heroContainer} bg-secondary p-0 overflow-hidden position-relative`} fluid>
-                <Image src={hero} fluid className={`${indexStyles.heroImage} p-0 m-0 position-absolute`} />
+                <Image src={ data.contentfulHero.image.file.url } fluid className={`${indexStyles.heroImage} p-0 m-0 position-absolute`} />
                 <Container className="h-100">
                     <Row className="h-100">
                         {data.allYoutubeVideo.edges.map((video, i) =>
