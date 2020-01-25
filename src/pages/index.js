@@ -75,9 +75,7 @@ const IndexPage = () => {
             <Container as="section">
                 <Row>
                     <Col>
-                    
                         <h2 className="my-5">Places we got hungry . . .</h2>
-                     
                     </Col>
                 </Row>
                 <ScrollAnimation animateIn={elementIn}>
