@@ -4,6 +4,7 @@ import React from 'react'
 import Head from '../components/head'
 import Frame from '../components/frame'
 import ScrollAnimation from 'react-animate-on-scroll';
+import ProgressiveImage from 'react-progressive-image'
 import PlayIcon from '../components/svg/playicon'
 
 //Hooks
@@ -73,7 +74,10 @@ const IndexPage = () => {
         <Frame>
             <Head title={siteTitle} />
             <Container className={`${indexStyles.heroContainer} bg-secondary p-0 overflow-hidden position-relative`} fluid>
-                <Image src={data.contentfulHero.image.file.url} fluid className={`${indexStyles.heroImage} p-0 m-0 position-absolute`} alt={data.contentfulHero.title} />
+                <ProgressiveImage src={data.contentfulHero.image.file.url} placeholder="../static/hero-lowres.jpg" >
+                    {src => <Image src={src} fluid className={`${indexStyles.heroImage} p-0 m-0 position-absolute`} alt={data.contentfulHero.title} />}
+                </ProgressiveImage>
+                {/* <Image src={data.contentfulHero.image.file.url} fluid className={`${indexStyles.heroImage} p-0 m-0 position-absolute`} alt={data.contentfulHero.title} /> */}
                 <Container className="h-100">
                     <Row className="h-100">
                         {data.allYoutubeVideo.edges.map((video, i) =>
