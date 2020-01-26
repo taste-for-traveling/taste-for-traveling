@@ -4,7 +4,6 @@ import React from 'react'
 import Head from '../components/head'
 import Frame from '../components/frame'
 import ScrollAnimation from 'react-animate-on-scroll';
-import { ReactSVG } from 'react-svg'
 import PlayIcon from '../components/svg/playicon'
 
 //Hooks
