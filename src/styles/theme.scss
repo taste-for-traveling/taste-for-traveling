@@ -31,3 +31,14 @@ h3 > a, .h3 > a {
     font-weight: bold;
     line-height: 0.9em;
 }
+
+.card {
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.card-img {
+    border: 0;
+    border-radius: 0;
+}

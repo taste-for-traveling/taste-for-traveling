@@ -14,7 +14,7 @@ import useSiteData from '../hooks/siteData'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 
 //Bootstrap
-import { Container, Row, Col, Image } from 'react-bootstrap'
+import { Container, Row, Col, Image, Card, CardGroup, CardColumns } from 'react-bootstrap'
 
 //Styles
 import indexStyles from '../styles/index.module.scss'
@@ -65,7 +65,26 @@ const IndexPage = () => {
               caption
             }
           }
-        }
+        },
+        allContentfulPlace {
+            edges {
+              node {
+                name,
+                location {
+                  lon,
+                  lat
+                }
+                slug
+                image {
+                  file {
+                    url
+                  },
+                  title,
+                  description
+                }
+              }
+            }
+          }
       }
       `
     )
@@ -102,20 +121,21 @@ const IndexPage = () => {
                         <h2 className="my-5">Places we got hungry . . .</h2>
                     </Col>
                 </Row>
-                <ScrollAnimation animateIn={elementIn} animateOnce>
-                    <Row>
-                        <Col>
-                            <img src="" />
-                            Japan
-                        </Col>
-                        <Col>
-                            Portugal
-                    </Col>
-                        <Col>
-                            America
-                    </Col>
-                    </Row>
-                </ScrollAnimation>
+                
+                    <CardColumns>
+                        {data.allContentfulPlace.edges.map((place, i) =>
+                        <ScrollAnimation animateIn={elementIn} animateOnce>
+                            <Link to={`places/${place.node.slug}`}>
+                                <Card key={i} variant="flush" >
+                                    <Card.Img src={place.node.image.file.url} alt={place.node.image.title} />
+                                    <Card.ImgOverlay>
+                                        <Card.Title>{place.node.name}</Card.Title>
+                                    </Card.ImgOverlay>
+                                </Card>
+                            </Link>
+                            </ScrollAnimation>
+                        )}
+                    </CardColumns>
             </Container>
 
             <Container fluid className="bg-red position-relative overflow-hidden" as="section">
