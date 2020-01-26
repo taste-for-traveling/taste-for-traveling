@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="288.877" height="619.397" viewBox="0 0 288.877 619.397">
+  <g id="Group_387" data-name="Group 387" transform="translate(0 0.183)">
+    <g id="Group_350" data-name="Group 350" transform="translate(0)">
+      <path id="Path_82" data-name="Path 82" d="M-18.928,0H103.816L53.679,71.714,60.29,395.606H25.267L36.714,71.714Z" transform="translate(18.928 223.608)" fill="rgba(255,255,255,0.44)"/>
+      <path id="Path_79" data-name="Path 79" d="M3.73,21.373,11.5,12.49,22.437,0V223.608H3.73Z" transform="translate(-3.73)" fill="rgba(255,255,255,0.44)"/>
+      <path id="Path_80" data-name="Path 80" d="M20.562,21.373l-7-8.882L3.73,0V223.608H20.562Z" transform="translate(102.182)" fill="rgba(255,255,255,0.44)"/>
+      <path id="Path_81" data-name="Path 81" d="M0-4.9H20.785V218.894H0Z" transform="translate(52.259 4.714)" fill="rgba(255,255,255,0.44)"/>
+    </g>
+    <g id="Group_349" data-name="Group 349" transform="matrix(0.996, 0.087, -0.087, 0.996, 166.763, 48.155)">
+      <path id="Path_83" data-name="Path 83" d="M0,0H28.445L11.486,486.408H0Z" fill="rgba(255,255,255,0.44)"/>
+      <path id="Path_84" data-name="Path 84" d="M0,0H28.445L11.486,486.408H0Z" transform="translate(99.338 49.581) rotate(10)" fill="rgba(255,255,255,0.44)"/>
+    </g>
+  </g>
+</svg>

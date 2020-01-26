@@ -9,6 +9,25 @@ $Titillium: 'Titillium Web', sans-serif;
 $shadow: 0 0 0.4em rgba(0,0,0,0.5);
 
 //overwrite bootstrap styles
+a {
+    color: $white;
+    &:hover {
+        color: $blue;
+    }
+}
+h3, .h3 {
+    font-weight: bold;
+}
+
+h3 > a, .h3 > a {
+    color: $white;
+}
+
 .bg-dark {
     background-color: $dark-gray!important;
+}
+
+.display-1 {
+    font-weight: bold;
+    line-height: 0.9em;
 }

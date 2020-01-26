@@ -1,13 +1,19 @@
 import React from 'react'
 
 //Gatsby
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { Link } from 'gatsby'
+
+//Hooks
+import useSiteData from '../hooks/siteData'
 
 //Bootstrap
-import { Container, Row, Col, ListGroup } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 
 //Static
 import Logo from '../static/TasteforTraveling-v2-700px.png'
+
+//Styles
+import footerStyles from '../styles/footer.module.scss'
 
 const siteLinks = [
     {
@@ -28,37 +34,24 @@ const siteLinks = [
 ]
 
 const Footer = () => {
-    const data = useStaticQuery(graphql`
-        query {
-            site {
-                siteMetadata {
-                    author
-                    social {
-                        youtube
-                        facebook
-                        instagram
-                    }
-                }
-            }
-        }
-    `)
+    const { title, author, social } = useSiteData()
     const socialLinks = [
         {
             key: 4,
             title: 'Facebook',
-            url: data.site.siteMetadata.social.facebook,
+            url: social.facebook,
             type: 'external'
         },
         {
             key: 5,
             title: 'Instagram',
-            url: data.site.siteMetadata.social.instagram,
+            url: social.instagram,
             type: 'external'
         },
         {
             key: 6,
             title: 'YouTube',
-            url: data.site.siteMetadata.social.youtube,
+            url: social.youtube,
             type: 'external'
         }
     ]
@@ -66,30 +59,30 @@ const Footer = () => {
         <footer>
             <Container className="my-5">
                 <Row>
-                    <Col>
+                    <Col md="5">
                         <img src={Logo} alt="Taste for Traveling" className="img-fluid" />
                         <p>A taste for travel, bit by the travel bug, wanderlust&mdash;whatever you want to call it, we&rsquo;ve got it. Plus we need food to live.</p>
-                        <p>&copy;{new Date().getFullYear()} Created by { data.site.siteMetadata.author }</p>
+                        <p>&copy;{new Date().getFullYear()} Created by { author }</p>
                     </Col>
-                    <Col>
+                    <Col md={{ span: 3, offset: 1 }}>
                         <h3>On This Site</h3>
-                        <ListGroup variant="flush">
+                        <ul className={footerStyles.list}>
                             {
                                 siteLinks.map((siteLink, i) =>
-                                    <ListGroup.Item key={i}><Link to={siteLink.url}>{siteLink.title}</Link></ListGroup.Item>
+                                    <li key={i}><Link to={siteLink.url}>{siteLink.title}</Link></li>
                                 )
                             }
-                        </ListGroup>
+                        </ul>
                     </Col>
-                    <Col>
+                    <Col md="3">
                         <h3>Social</h3>
-                        <ListGroup variant="flush">
+                        <ul className={footerStyles.list}>
                             {
                                 socialLinks.map((socialLink, i) =>
-                                    <ListGroup.Item key={i}><a href={socialLink.url} target="_blank" rel="noopener noreferrer">{socialLink.title}</a></ListGroup.Item>
+                                    <li key={i}><a href={socialLink.url} target="_blank" rel="noopener noreferrer">{socialLink.title}</a></li>
                                 )
                             }
-                        </ListGroup>
+                        </ul>
                     </Col>
                 </Row>
             </Container>

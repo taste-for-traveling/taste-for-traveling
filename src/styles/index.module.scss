@@ -26,4 +26,27 @@
     font-size: 5vmin;
     font-weight: bold;
     white-space: nowrap;
+    height: 1.5em;
+    width: auto;
+    margin: 0 0.25em;
+    &:hover {
+        circle {
+            fill: $blue;
+        }
+        
+    }
+}
+
+.globe {
+    top: 40%;
+    right: -10%;
+    transform: translate(0, -50%);
+    height: 100%;
+    width: auto;
+}
+
+.fork {
+    top: 50%;
+    left: 5%;
+    transform: translate(0, -50%);
 }
