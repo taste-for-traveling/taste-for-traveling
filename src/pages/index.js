@@ -5,23 +5,26 @@ import Head from '../components/head'
 import Frame from '../components/frame'
 import ScrollAnimation from 'react-animate-on-scroll';
 import ProgressiveImage from 'react-progressive-image'
-import PlayIcon from '../components/svg/playicon'
 
 //Hooks
 import useSiteData from '../hooks/siteData'
+import SpriteSVG from '../hooks/spritesvg'
 
 //Gatsby
 import { Link, graphql, useStaticQuery } from 'gatsby'
 
 //Bootstrap
-import { Container, Row, Col, Image, Card, CardGroup, CardColumns } from 'react-bootstrap'
+import { Container, Row, Col, Image, Card, CardGroup, CardColumns, Button, ButtonGroup, CardDeck } from 'react-bootstrap'
+
+//FontAwesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons'
 
 //Styles
 import indexStyles from '../styles/index.module.scss'
+import '../styles/animations.scss'
 
 //Static
-// import playIcon from '../static/icon-play.svg'
-import globe from '../static/t4t-globe-only.svg'
 import fork from '../static/t4t-fork-hashi.svg'
 
 export const siteTitle = "Home"
@@ -55,14 +58,13 @@ const IndexPage = () => {
         allInstaNode(limit: 1) {
           edges {
             node {
-              id
-              likes
-              comments
+                id
               mediaType
               preview
               original
               timestamp
               caption
+              username
             }
           }
         },
@@ -104,10 +106,12 @@ const IndexPage = () => {
                                 <div className={`${indexStyles.latestVideo} mb-5`}>
                                     <h2>{video.node.title}</h2>
                                     <div className="display-2">
+                                        <ScrollAnimation animateIn="pulse">
                                         <a href={`https://youtu.be/${video.node.videoId}`} target="_blank" rel="noopener noreferrer" className={indexStyles.watchNow}>
-                                            Watch Now 
-                                            <PlayIcon className={indexStyles.watchNow} />
+                                            Watch Now
+                                            <SpriteSVG variant="play" className={indexStyles.watchNow} />
                                         </a>
+                                        </ScrollAnimation>
                                     </div>
                                 </div>
                             </Col>
@@ -115,50 +119,75 @@ const IndexPage = () => {
                     </Row>
                 </Container>
             </Container>
+            <Container as="section" fluid className="pb-2 position-relative">
+                <div id="planeAnimation" className={indexStyles.planeAnimationWrapper}>
+                    <ScrollAnimation animateIn="driftCloud1" animateOnce>
+                        <SpriteSVG variant="cloud1" className={indexStyles.cloud1} />
+                    </ScrollAnimation>
+                    <ScrollAnimation animateIn="driftCloud2" animateOnce>
+                        <SpriteSVG variant="cloud2" className={indexStyles.cloud2} />
+                    </ScrollAnimation>
+                    <ScrollAnimation animateIn="flyPlane" animateOnce>
+                        <SpriteSVG variant="airplane" className={indexStyles.airplane} />
+                    </ScrollAnimation>
+                </div>
+
+                <Container>
+                    <p class="display-3">We like to eat, travel, and make videos about it all.</p>
+                    <ButtonGroup size="lg" className="mt-4" >
+                        <Button className="mx-2" href={social.youtube} target="_blank" rel="noopener noreferrer">Subscribe on YouTube</Button>
+                        <Button className="mx-2" href={social.instagram} rel="noopener noreferrer">Follow on Instagram</Button>
+                        <Button className="mx-2" href={social.facebook} rel="noopener noreferrer">Like on Facebook</Button>
+                    </ButtonGroup>
+                </Container>
+
+            </Container>
             <Container as="section">
                 <Row>
                     <Col>
                         <h2 className="my-5">Places we got hungry . . .</h2>
                     </Col>
                 </Row>
-                
-                    <CardColumns>
+                <Row>
+                    <CardColumns className={`${indexStyles.places} flex-wrap`}>
                         {data.allContentfulPlace.edges.map((place, i) =>
-                        <ScrollAnimation animateIn={elementIn} animateOnce>
-                            <Link to={`places/${place.node.slug}`}>
-                                <Card key={i} variant="flush" >
+                            <ScrollAnimation animateIn="fadeIn" animateOnce>
+                                <Card key={i} variant="flush" className={`${indexStyles.place} my-2`} >
                                     <Card.Img src={place.node.image.file.url} alt={place.node.image.title} />
-                                    <Card.ImgOverlay>
-                                        <Card.Title>{place.node.name}</Card.Title>
+                                    <Card.ImgOverlay className="p-0">
+                                        <Card.Title className={indexStyles.placeTitle}><Link to={`places/${place.node.slug}`}>{place.node.name}</Link></Card.Title>
                                     </Card.ImgOverlay>
                                 </Card>
-                            </Link>
                             </ScrollAnimation>
                         )}
                     </CardColumns>
+                </Row>
             </Container>
 
             <Container fluid className="bg-red position-relative overflow-hidden" as="section">
                 <Container>
                     <Row>
                         <Col>
-                            <h2 className="mb-4">@{social.instagramHandle}</h2>
+                            <h2 className="mb-4"><a href={social.instagram} target="_blank" rel="noopener noreferrer">@{social.instagramHandle}</a></h2>
                         </Col>
                     </Row>
                     {data.allInstaNode.edges.map((post, i) =>
                         <Row key={i}>
                             <Col md="4">
-                                <img src={post.node.preview} alt="Instagram Photo" className="img-fluid" />
+                                <a href={`https://www.instagram.com/p/${post.node.id}`} target="_blank" rel="noopener noreferrer">
+                                    <Image src={post.node.preview} alt="Instagram Photo" className="img-fluid" />
+                                </a>
                             </Col>
                             <Col md="4">
-                                <p><strong>tastefortraveling</strong> {post.node.caption}</p>
+                                <p><strong><a href={`https://www.instagram.com/${post.node.username}`} target="_blank" rel="noopener noreferrer">{post.node.username}</a></strong> {post.node.caption}</p>
+                                <h3><a href={`https://www.instagram.com/p/${post.node.id}`} target="_blank" rel="noopener noreferrer">See post on Instagram <FontAwesomeIcon icon={faCaretRight} /></a></h3>
                             </Col>
                         </Row>
                     )}
                 </Container>
                 <div className={`${indexStyles.globe} position-absolute`}>
-                    <ScrollAnimation animateIn="fadeInRight" animateOnce>
-                        <Image src={globe} />
+                    <ScrollAnimation animateIn="rotateGlobe" animateOnce>
+                        <SpriteSVG variant="globe" />
                     </ScrollAnimation>
                 </div>
             </Container>
@@ -166,13 +195,19 @@ const IndexPage = () => {
                 <Container>
                     <Row>
                         <Col>
-                            <h2 className="mb-4 display-1">Flavor has<br/>no borders.</h2>
+                            <ScrollAnimation animateIn="fadeInLeft" animateOnce>
+                                <h2 className="mb-4 display-1">Flavor has<br />no borders.</h2>
+                            </ScrollAnimation>
                         </Col>
                         <Col>
-                            <p>Four score and seven years ago, I started to make this design mockup in Adobe XD. It's going to be a long haul before I can get this working with NextJS and Contentful, but I'm going to try real hard.Four score and seven years ago, I started to make this design mockup in Adobe XD. It's going to be a long haul before I can get this working with NextJS and Contentful, but I'm going to try real hard.</p>
-                            <p>Four score and seven years ago, I started to make this design mockup in Adobe XD. It's going to be a long haul before I can get this working with NextJS and Contentful, but I'm going to try real hard...</p>
-                            <p>To make this design mockup in Adobe XD. It's going to be a long haul before I can get this working with NextJS and Contentful, but I'm going to try real hard.</p>
-                            <h3><Link to="/about">More about us</Link></h3>
+                            <ScrollAnimation animateIn="fadeIn" animateOnce delay="200">
+                                <p>Four score and seven years ago, I started to make this design mockup in Adobe XD. It's going to be a long haul before I can get this working with NextJS and Contentful, but I'm going to try real hard.Four score and seven years ago, I started to make this design mockup in Adobe XD. It's going to be a long haul before I can get this working with NextJS and Contentful, but I'm going to try real hard.</p>
+                                <p>Four score and seven years ago, I started to make this design mockup in Adobe XD. It's going to be a long haul before I can get this working with NextJS and Contentful, but I'm going to try real hard...</p>
+                                <p>To make this design mockup in Adobe XD. It's going to be a long haul before I can get this working with NextJS and Contentful, but I'm going to try real hard.</p>
+                            </ScrollAnimation>
+                            <ScrollAnimation animateIn="fadeIn" animateOnce delay="300">
+                                <h3><Link to="/about">More about us <FontAwesomeIcon icon={faCaretRight} /></Link></h3>
+                            </ScrollAnimation>
                         </Col>
                     </Row>
                     <Row>
