@@ -14,7 +14,7 @@ import SpriteSVG from '../hooks/spritesvg'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 
 //Bootstrap
-import { Container, Row, Col, Image, Card, CardGroup, CardColumns, Button, ButtonGroup, CardDeck } from 'react-bootstrap'
+import { Container, Row, Col, Image, Card, CardColumns, Button, ButtonGroup } from 'react-bootstrap'
 
 //FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

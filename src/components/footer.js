@@ -60,7 +60,7 @@ const Footer = () => {
             <Container className="my-5">
                 <Row>
                     <Col md="5">
-                        <img src={Logo} alt="Taste for Traveling" className="img-fluid" />
+                        <img src={Logo} alt={title} className="img-fluid" />
                         <p>A taste for travel, bit by the travel bug, wanderlust&mdash;whatever you want to call it, we&rsquo;ve got it. Plus we need food to live.</p>
                         <p>&copy;{new Date().getFullYear()} Created by { author }</p>
                     </Col>

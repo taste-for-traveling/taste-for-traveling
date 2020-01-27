@@ -70,31 +70,34 @@ const SiteNavbar = () => {
     ]
     return (
         <header>
-                <Navbar collapseOnSelect bg="transparent" expand="lg" fixed="top" className={`${siteNavbarStyles.navbar} p-0`}>
-                    <Container className="align-items-start">
-                    <NavbarBrand className="m-0 p-0">
+            <Navbar collapseOnSelect variant="dark" expand="lg" fixed="top" className={`${siteNavbarStyles.navbar} p-0`}>
+                <Container className="align-items-start" fluid>
+                    <NavbarBrand className="m-0 p-0 ml-2">
                         <Link to="/" className={siteNavbarStyles.logo}>
                             <img src={logo} alt="logo" /> <strong>Taste</strong> for Traveling
-                        </Link>
+                    </Link>
                     </NavbarBrand>
-                    <Nav className={`justify-content-end w-100`} activeKey="/">
-                        {
-                            navItems.map((navItem, i) => {
-                                if (navItem.type === 'internal') {
-                                    return (
-                                        <Nav.Item key={i} className={siteNavbarStyles.navItem}><Link to={navItem.url} className={`${siteNavbarStyles.link} d-block w-100`} activeClassName={siteNavbarStyles.activeLink}>{navItem.title}</Link></Nav.Item>
-                                    )
-                                } else if (navItem.type === 'external') {
-                                    return(
-                                        <Nav.Item key={i} className={siteNavbarStyles.navItem}><a href={navItem.url} target="_blank" rel="noopener noreferrer" className={`${siteNavbarStyles.link} d-block w-100`}>{navItem.title} <FontAwesomeIcon icon={faCaretRight} className={siteNavbarStyles.icon} /></a></Nav.Item>
-                                    )
-                                }
-                                return null;
-                            })
-                        }
-                    </Nav>
-                    </Container>
-                </Navbar>
+                    <Navbar.Toggle aria-controls="site-nav" className={`${siteNavbarStyles.toggle} border-0 mt-1 mr-2`} />
+                    <Navbar.Collapse id="site-nav" className="bg-dark primary">
+                        <Nav className={`justify-content-end w-100`} activeKey="/">
+                            {
+                                navItems.map((navItem, i) => {
+                                    if (navItem.type === 'internal') {
+                                        return (
+                                            <Nav.Item key={i} className={siteNavbarStyles.navItem}><Link to={navItem.url} className={`${siteNavbarStyles.link} d-block w-100`} activeClassName={siteNavbarStyles.activeLink}>{navItem.title}</Link></Nav.Item>
+                                        )
+                                    } else if (navItem.type === 'external') {
+                                        return (
+                                            <Nav.Item key={i} className={siteNavbarStyles.navItem}><a href={navItem.url} target="_blank" rel="noopener noreferrer" className={`${siteNavbarStyles.link} d-block w-100`}>{navItem.title} <FontAwesomeIcon icon={faCaretRight} className={siteNavbarStyles.icon} /></a></Nav.Item>
+                                        )
+                                    }
+                                    return null;
+                                })
+                            }
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
 
         </header>
     )
